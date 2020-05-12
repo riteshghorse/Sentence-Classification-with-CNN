@@ -1,0 +1,204 @@
+<html>
+<head>
+   {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/log.css' %}">
+<style type="text/css"
+body{
+  margin:0;
+  color:#00a3cc;
+  background:#c8c8c8;
+  font:600 16px/18px 'Open Sans',sans-serif;
+        
+            background-size: 100% 100%;
+    background-repeat: no-repeat;
+}></style>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" href="{%  static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'dist/css/skins/_all-skins.min.css'  %}">
+  
+  <link rel="stylesheet" href="{% static 'bower_components/morris.js/morris.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'bower_components/jvectormap/jquery-jvectormap.css' %">
+  
+  <link rel="stylesheet" href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.css' %} ">
+  
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue " background-image="{% static '/images/train.jpg' %}">
+<div class="wrapper">
+
+<header class="main-header">
+    <a href="home.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-lg"><b>Test Application</span>
+    </a>
+    
+  </header>
+
+ <div class="modal fade" id="modal-default" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Login</h4>
+              </div>
+              <div class="modal-body">
+               <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Horizontal Form</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" method="POST" action="login1">{% csrf_token %}>
+              <div class="box-body">
+                <div class="form-group"> 
+                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name= "password" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label  class="col-sm-2 control-label">Type</label>
+
+                  <div class="col-sm-10">
+                   <input type="radio" name="type" value="GM" checked> GM<br>
+                    <input type="radio" name="type" value="DRM"> DRM<br>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Login</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+              </div>
+             
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+
+   
+  <section class="content">
+
+
+<div class="login-wrap" style="margin-top: 40px; margin-bottom: 70px;">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" >Test</label>
+  
+    
+   
+      <form method="POST" action="/Query">{% csrf_token %}
+         <div class="group">
+          <label for="user" class="label">Query</label>
+          <input id="user" name="feedback" type="text" style="height: 100px; width: 300px;" class="input">
+         </div>       
+        <div class="group">
+          <input type="submit" class="button" value="Test" >
+        </div>
+  
+        
+      </form>
+      
+     
+    
+    </div>
+  </div>
+      
+  </section>
+</div>
+
+
+
+
+
+
+
+<footer class="main-footer" >
+  </footer>
+
+
+
+</div>
+
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+
+<script src="{% static 'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'bower_components/fastclick/lib/fastclick.js' %}"></script>
+
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<script src="{% static 'dist/js/pages/dashboard.js' %}"></script>
+<script src="{% static 'dist/js/demo.js' %}"></script>
+
+</body>
+
+</html>
